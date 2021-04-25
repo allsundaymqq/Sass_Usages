@@ -7,7 +7,8 @@ Webpack modules bundler only handle Javascript and JSON files, if you using Sass
 
 ### Usages:
 1. define Mixins Variables in Minxin.scss file , Using Vue CLI - vue.config.js to include the Mixins.scss as Data Attribute.  
-    `  //minxins.scss
+    ```javascript
+    //minxins.scss
     @mixin respond($breakpoint) {
     @if $breakpoint == phone {
         @media only screen and (min-width: 20em) and (max-width: 48em) {
@@ -33,4 +34,4 @@ Webpack modules bundler only handle Javascript and JSON files, if you using Sass
         }
     }
 }
-    `
+    ```
