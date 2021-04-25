@@ -5,7 +5,7 @@ Common usages of Sass pre-css-processor
 ### Preface
 Webpack modules bundler only handle Javascript and JSON files, if you using Sass in your project, then have to add loaders In Webpack config-file...  
 
-### Usages:
+### @mixin Usages in Responsive web case:
 1. define Mixins Variables in minxin.scss file , Then using Vue CLI - vue.config.js to include the Mixins.scss as Data Attribute.  
     ```javascript
     //minxins.scss
@@ -49,3 +49,18 @@ Webpack modules bundler only handle Javascript and JSON files, if you using Sass
     };
 
     ```
+3. In your index.html page, you want to write Responsive css Code via SASS, then:
+```css
+    header {
+    background: #18191c;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+
+    @include respond(phone) {
+        position: fixed;
+        top: 0;
+        }
+    }
+```
