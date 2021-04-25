@@ -6,7 +6,7 @@ Common usages of Sass pre-css-processor
 Webpack modules bundler only handle Javascript and JSON files, if you using Sass in your project, then have to add loaders In Webpack config-file...  
 
 ### Usages:
-1. define Mixins Variables in Minxin.scss file , Using Vue CLI - vue.config.js to include the Mixins.scss as Data Attribute.  
+1. define Mixins Variables in minxin.scss file , Then using Vue CLI - vue.config.js to include the Mixins.scss as Data Attribute.  
     ```javascript
     //minxins.scss
     @mixin respond($breakpoint) {
@@ -31,7 +31,21 @@ Webpack modules bundler only handle Javascript and JSON files, if you using Sass
     @if $breakpoint == desktop {
         @media only screen and (min-width: 64em) and (max-width: 114em) {
             @content;
+            }
         }
     }
-}
+    ```
+2. using vue.config.js file to set CSS and loaders
+    ```javascript
+    module.exports = {
+    css: {
+        loaderOptions: {
+            sass: {
+                data: `@import "@/assets/scss/abstract/mixins.scss";`
+            }
+        }
+    },
+   
+    };
+
     ```
