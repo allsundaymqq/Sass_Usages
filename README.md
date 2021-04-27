@@ -8,7 +8,7 @@ Webpack modules bundler only handle Javascript and JSON files, if you using Sass
 ### Tables of content
 
 
-### @mixin Usages in Responsive web case:
+#### @mixin Usages in Responsive web case:
 1. define Mixins Variables in minxin.scss file , Then using Vue CLI - vue.config.js to include the Mixins.scss as Data Attribute.  
     ```javascript
     //minxins.scss
@@ -64,6 +64,22 @@ Webpack modules bundler only handle Javascript and JSON files, if you using Sass
     @include respond(phone) {
         position: fixed;
         top: 0;
+        }
+    }
+```
+
+#### Recursive CSS rules in SASS
+Recursive css write style is commonly adopted, and Sass grammar is like this:  
+```css
+    .section{
+    //& refs ".section"
+        &--title{//.section--title
+            & > img{ //.section--title > img
+            
+            }
+            &:hover{
+            
+            }
         }
     }
 ```
